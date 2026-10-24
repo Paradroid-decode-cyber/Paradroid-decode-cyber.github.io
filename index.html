@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parameswari Palani – AI/ML Engineer</title>
+<meta name="description" content="Computer Science undergraduate building OCR, RAG and vision-language systems. Patent filed for AI-based forensic crime scene reconstruction.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F1F4F8; --card:#FFFFFF; --ink:#101828; --muted:#4A5568; --line:#D5DBE5;
+  --box:#2F5BFF; --mark:#FFE066;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0E131C;--card:#161D29;--ink:#E8EDF5;--muted:#9AA6B8;--line:#273143;--box:#7C9BFF;--mark:#7A6A12}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--box);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:20px;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px}
+nav b{font-family:var(--display);font-weight:800}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:.95rem;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* hero: the name is "scanned" – OCR boxes draw in once */
+.hero{padding:88px 0 72px}
+.scan{position:relative;display:inline-block;margin:10px 0 0}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,9vw,6rem);line-height:.98;letter-spacing:-.03em;margin:0}
+h1 span{display:block}
+.bx{position:absolute;border:2px solid var(--box);pointer-events:none;opacity:0;animation:pop .5s ease forwards}
+.bx i{position:absolute;left:-2px;top:-22px;background:var(--box);color:#fff;font:600 .68rem/1 var(--body);padding:4px 6px;font-style:normal;white-space:nowrap}
+.b1{inset:-4px 0 52% -8px;animation-delay:.3s}
+.b2{inset:52% 0 -4px -8px;animation-delay:.9s}
+@keyframes pop{from{opacity:0;transform:scaleX(.6);transform-origin:left}to{opacity:1;transform:none}}
+.role{font-family:var(--display);font-weight:500;font-size:clamp(1.15rem,2.6vw,1.6rem);margin:44px 0 12px}
+.lede{max-width:62ch;color:var(--muted);margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;border:2px solid var(--ink);font-weight:600;text-decoration:none}
+.btn.p{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--mark);color:#101828;border-color:var(--ink)}
+
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:-.02em;margin:0 0 28px}
+h3{font-family:var(--display);font-weight:700;font-size:1.3rem;margin:0 0 4px;line-height:1.25}
+.meta{color:var(--muted);font-size:.95rem;margin:0 0 10px}
+ul.pts{margin:10px 0 0;padding-left:20px}
+ul.pts li{margin-bottom:6px;max-width:75ch}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:28px}
+.stat{border-left:4px solid var(--box);padding:4px 0 4px 14px}
+.stat b{display:block;font-family:var(--display);font-size:1.5rem}
+.stat span{color:var(--muted);font-size:.95rem}
+
+.job{display:grid;grid-template-columns:150px 1fr;gap:8px 32px;padding:0 0 36px}
+.job time{color:var(--muted);font-weight:500}
+@media(max-width:640px){.job{grid-template-columns:1fr}}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px}
+.proj.big{grid-column:1/-1;border-color:var(--box)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0;padding:0;list-style:none}
+.tags li{font-size:.82rem;border:1px solid var(--line);padding:2px 9px;border-radius:99px;color:var(--muted)}
+mark{background:var(--mark);color:inherit;padding:0 3px}
+
+dl.skills{display:grid;grid-template-columns:200px 1fr;gap:14px 24px;margin:0}
+dl.skills dt{font-weight:600}
+dl.skills dd{margin:0;color:var(--muted)}
+@media(max-width:640px){dl.skills{grid-template-columns:1fr;gap:2px}dl.skills dd{margin-bottom:14px}}
+
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+.two ul{padding-left:20px;margin:0}
+.two li{margin-bottom:8px}
+.contact a.big{font-family:var(--display);font-weight:800;font-size:clamp(1.3rem,4.5vw,2.4rem);overflow-wrap:anywhere}
+footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){.bx{animation:none;opacity:1}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav aria-label="Main"><div class="wrap">
+  <b>PP</b>
+  <ul>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<main>
+<header class="hero"><div class="wrap">
+  <div class="scan" aria-label="Parameswari Palani">
+    <h1><span>Parameswari</span><span>Palani</span></h1>
+    <div class="bx b1" aria-hidden="true"><i>first_name 0.99</i></div>
+    <div class="bx b2" aria-hidden="true"><i>last_name 0.99</i></div>
+  </div>
+  <p class="role">AI/ML engineer in the making. I turn messy documents and images into answers.</p>
+  <p class="lede">Final-year Computer Science student at St. Joseph's College of Engineering. I build OCR pipelines, retrieval (RAG) systems and vision-language models, and serve them through clean APIs.</p>
+  <div class="btns">
+    <a class="btn p" href="#projects">See my projects</a>
+    <a class="btn" href="mailto:parameswaripalani01@gmail.com">Email me</a>
+    <!-- Optional: add your resume PDF to the repo as resume.pdf, then uncomment -->
+    <!-- <a class="btn" href="resume.pdf">Download resume</a> -->
+  </div>
+  <div class="stats">
+    <div class="stat"><b>8.87</b><span>CGPA, B.E. Computer Science</span></div>
+    <div class="stat"><b>1 patent filed</b><span>AI forensic crime scene reconstruction</span></div>
+    <div class="stat"><b>2 internships</b><span>OCR + RAG, and vision-language models</span></div>
+  </div>
+</div></header>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <article class="job">
+    <time>June 2025</time>
+    <div>
+      <h3>Technology Intern, Synergy Maritime</h3>
+      <p class="meta">Chennai · OCR &amp; RAG-based document intelligence</p>
+      <ul class="pts">
+        <li>Built an OCR extraction pipeline with Python and Tesseract to pull structured text from scanned documents.</li>
+        <li>Developed a RAG system with LangChain and FAISS for querying the extracted document data.</li>
+        <li>Shipped a working data-assistant prototype using the Gemini API and Streamlit.</li>
+      </ul>
+    </div>
+  </article>
+  <article class="job">
+    <time>June 2025</time>
+    <div>
+      <h3>AI Engineer Intern, Tecnonauts Technology Services</h3>
+      <p class="meta">Kakkanad, Kerala (Remote) · Vision-language model system for crime scene reconstruction</p>
+      <ul class="pts">
+        <li>Prepared and structured multimodal (image + text) datasets for model training and analysis.</li>
+        <li>Applied deep learning and NLP techniques to process and validate large-scale forensic data.</li>
+      </ul>
+    </div>
+  </article>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <div class="grid">
+    <article class="proj big">
+      <h3>Forensic Crime Scene Reconstruction using VLM</h3>
+      <p class="meta"><mark>Patent filed</mark> · No. 202641008176</p>
+      <ul class="pts">
+        <li>Created structured image–caption–QA datasets and optimized training with gradient accumulation and GPU memory handling.</li>
+        <li>Built an inference pipeline for direct, structured querying of the trained model.</li>
+      </ul>
+      <ul class="tags"><li>Vision-Language Models</li><li>Deep learning</li><li>Dataset design</li></ul>
+    </article>
+    <article class="proj">
+      <h3>NCERT Personalization Engine</h3>
+      <p class="meta">AI-powered adaptive learning platform</p>
+      <ul class="pts">
+        <li>Built the backend with FastAPI, LangGraph, ChromaDB and SQLite.</li>
+        <li>Designed a RAG pipeline and Bayesian Knowledge Tracing logic to serve adaptive, context-aware content.</li>
+        <li>Developed REST APIs for chat, quiz evaluation and user profiles.</li>
+      </ul>
+      <ul class="tags"><li>FastAPI</li><li>LangGraph</li><li>ChromaDB</li><li>RAG</li></ul>
+    </article>
+    <article class="proj">
+      <h3>AI Women Safety Application</h3>
+      <p class="meta">Distress detection using BERT</p>
+      <ul class="pts">
+        <li>Developed a BERT-based classifier to detect emergency intent in user messages.</li>
+        <li>Built a data collection and alert pipeline in Flask, combining sentiment scores with keyword-based risk signals.</li>
+      </ul>
+      <ul class="tags"><li>BERT</li><li>NLP</li><li>Flask</li></ul>
+    </article>
+  </div>
+  <!-- Add GitHub links per project, e.g. <a href="https://github.com/YOUR-USERNAME/REPO">Code</a> -->
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt><dd>Python, SQL</dd>
+    <dt>Databases</dt><dd>MySQL; ChromaDB and FAISS vector stores</dd>
+    <dt>Data pipelines</dt><dd>OCR-based extraction, data cleaning, feature engineering, RAG pipelines, multimodal dataset preparation</dd>
+    <dt>Frameworks and APIs</dt><dd>Pandas, NumPy, LangChain, LangGraph, FastAPI, Flask, REST APIs</dd>
+    <dt>Applied AI</dt><dd>NLP, LLMs, vision-language models</dd>
+  </dl>
+</div></section>
+
+<section id="more"><div class="wrap two">
+  <div>
+    <h2>Certificates</h2>
+    <ul>
+      <li>Microsoft Certified: Azure AI Fundamentals (April 2026)</li>
+      <li>Deloitte: Data Analytics Job Simulation (January 2025)</li>
+      <li>Kaggle: Pandas (February 2025)</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Education and achievements</h2>
+    <ul>
+      <li>B.E. Computer Science, St. Joseph's College of Engineering (2023 – 2027), CGPA 8.87</li>
+      <li>Patent filed: AI-based forensic crime scene reconstruction using VLM</li>
+      <li>MHTECHIN Innovation Challenge 2024, hackathon participant</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <p>Open to internships and entry-level roles in AI/ML and data engineering.</p>
+  <p><a class="big" href="mailto:parameswaripalani01@gmail.com">parameswaripalani01@gmail.com</a></p>
+  <p>
+    <a href="https://www.linkedin.com/in/parameswari-palani" target="_blank" rel="noopener">LinkedIn</a> &nbsp;|&nbsp; <a href="https://github.com/Paradroid-decode-cyber" target="_blank" rel="noopener">GitHub</a>
+  </p>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Parameswari Palani</div></footer>
+</body>
+</html>
